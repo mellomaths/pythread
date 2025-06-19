@@ -35,6 +35,7 @@ LOGGING_CONFIG = {
             'filename': settings.LOG_FILE,  # Default log file name
             'maxBytes': settings.LOG_MAX_BYTES, # = 1MB
             'backupCount': settings.LOG_BACKUP_COUNT,  # Number of backup log files to keep
+            'mode': 'w',  # Overwrite file each run
         },
     },
     'loggers': {

@@ -1,8 +1,19 @@
+
+
 lint:
     uv run ruff check
 
 dev:
     uv run fastapi dev src/main.py
+
+test:
+    uv run pytest --cov=src --cov-report=term-missing
+
+perf-help:
+    uv run python tests/performance/main.py --help
+
+perf-local:
+        uv run python tests/performance/main.py --base-url http://localhost:8000 --workers 10 --iterations 10
 
 run:
     uv run fastapi run --workers 4 --host 127.0.0.1 src/main.py
